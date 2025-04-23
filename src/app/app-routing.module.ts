@@ -5,7 +5,7 @@ import {AuthGuard} from "./auth/auth.guard";
 import {ReportViewerComponent} from "./powerbi-backend/report-viewer/report-viewer.component";
 import {RegisterComponent} from "./auth/register/register.component";
 import {UserManagementComponent} from "./auth/user-management/user-management.component";
-import {DashboardComponent} from "./nav/dashboard/dashboard.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 const routes: Routes = [
   {

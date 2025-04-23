@@ -11,12 +11,11 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {JwtModule} from "@auth0/angular-jwt";
 import {LoginComponent} from './auth/login/login.component';
-import {NavbarComponent} from './nav/navbar.component';
 import {ReportViewerComponent} from './powerbi-backend/report-viewer/report-viewer.component';
 import {AuthInterceptor} from "./auth/auth.interceptor";
 import {RegisterComponent} from './auth/register/register.component';
 import {UserManagementComponent} from './auth/user-management/user-management.component';
-import {DashboardComponent} from './nav/dashboard/dashboard.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
@@ -30,7 +29,6 @@ import {MatGridListModule} from "@angular/material/grid-list";
   declarations: [
     AppComponent,
     LoginComponent,
-    NavbarComponent,
     ReportViewerComponent,
     RegisterComponent,
     UserManagementComponent,
