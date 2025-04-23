@@ -1,0 +1,17 @@
+<div class="p-4 max-w-sm mx-auto mt-10 shadow-xl rounded bg-white">
+  <h2 class="text-xl font-bold mb-4">Login</h2>
+  <form (ngSubmit)="login()">
+    <input [(ngModel)]="username" name="username" placeholder="Username"
+           class="w-full mb-2 p-2 border rounded" required/>
+    <input [(ngModel)]="password" name="password" type="password" placeholder="Password"
+           class="w-full mb-4 p-2 border rounded ms-2" required/>
+      <button type="submit" class="btn btn-sm btn-outline-primary mx-1 ">
+      Login
+    </button>
+    <p class="mt-4 text-sm">
+      Don't have an account?
+      <a routerLink="/register" class="text-blue-500 hover:underline">Register here</a>
+    </p>
+
+  </form>
+</div>

@@ -1,0 +1,44 @@
+<div class="admin-container">
+  <h2>User Management</h2>
+
+  <div *ngIf="loading">Loading users...</div>
+
+  <!-- New User Form -->
+  <div class="new-user-form" *ngIf="!loading">
+    <h3>Add New User</h3>
+    <input [(ngModel)]="newUser.username" placeholder="Username">
+    <input [(ngModel)]="newUser.password" type="password" placeholder="Password">
+    <select [(ngModel)]="newUser.role">
+      <option value="">Select role</option>
+      <option *ngFor="let role of roles">{{ role }}</option>
+    </select>
+    <button (click)="addUser()">Add User</button>
+  </div>
+
+  <!-- User Table -->
+  <table *ngIf="!loading" class="user-table">
+    <thead>
+    <tr>
+      <th>Username</th>
+      <th>Current Role</th>
+      <th>Change Role</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.username }}</td>
+      <td>{{ user.role }}</td>
+      <td>
+        <select [value]="user.role" (change)="updateRole(user, $any($event.target).value)">
+          <option value="">Select role</option>
+          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+        </select>
+      </td>
+      <td>
+        <button (click)="deleteUser(user)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

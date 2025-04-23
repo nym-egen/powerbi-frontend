@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Register</h2>
+
+  <form (ngSubmit)="register()" class="card card-p p-4 shadow-sm">
+
+    <!-- Username Input -->
+    <div class="row">
+
+      <div class="col-4">
+        <label for="username" class="form-label"></label>
+        <input type="text" [(ngModel)]="username" name="username" class="form-control" id="username"
+               placeholder="Username" required [ngClass]="{'is-invalid': !username && error}">
+      </div>
+
+      <!-- Password Input -->
+      <div class="col-4">
+        <label for="password" class="form-label"></label>
+        <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password"
+               placeholder="Password" required [ngClass]="{'is-invalid': !password && error}">
+      </div>
+
+      <!-- Submit Button -->
+      <div class="col-4 mt-3">
+        <button type="submit" class="btn btn-primary w-100">Register</button>
+        <p class="mt-2 text-sm">
+          Already have an account?
+          <a routerLink="/login" class="text-blue-500 hover:underline">Login</a>
+        </p>
+      </div>
+    </div>
+  </form>
+
+  <!-- Success Message -->
+  <div *ngIf="success" class="alert alert-success mt-3">
+    {{ success }}
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="alert alert-danger mt-3">
+    {{ error }}
+  </div>
+</div>

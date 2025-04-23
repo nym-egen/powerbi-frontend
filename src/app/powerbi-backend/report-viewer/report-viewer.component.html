@@ -1,0 +1,17 @@
+<div>
+  <h2>Select a Report:</h2>
+  <select [(ngModel)]="selectedReportId">
+    <option *ngFor="let report of reports" [value]="report.id">{{ report.name }}</option>
+  </select>
+  <button (click)="embedReport(selectedReportId)">Embed</button>
+</div>
+
+<mat-progress-spinner
+  *ngIf="isLoading"
+  mode="indeterminate"
+  color="primary"
+  diameter="50"
+  style="margin-top: 20px;"
+></mat-progress-spinner>
+
+<div id="reportContainer" style="height: 600px; border: 1px solid #ccc; margin-top: 20px;"></div>
