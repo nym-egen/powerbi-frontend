@@ -1,0 +1,27 @@
+/* Basic layout */
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.toolbar-title {
+  flex: 1;
+}
+
+.mat-card {
+  margin: 10px 0;
+}
+
+/* Ensure the dashboard content is responsive */
+@media (max-width: 768px) {
+  .sidenav {
+    width: 100%;
+  }
+
+  .mat-card {
+    margin: 5px 0;
+  }
+}
